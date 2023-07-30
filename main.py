@@ -11,7 +11,7 @@ import streamlit as st
 from streamlit_chat import message
 from utils import *
 
-st.title("RAG Chatbot")
+st.subheader("RAG Chatbot")
 
 if 'responses' not in st.session_state:
     st.session_state['responses'] = ["How can I assist you?"]
@@ -20,7 +20,7 @@ if 'requests' not in st.session_state:
     st.session_state['requests'] = []
 
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", 
-openai_api_key="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")
+openai_api_key="OPENAI_API_KEY")
 
 if 'buffer_memory' not in st.session_state:
             st.session_state.buffer_memory=ConversationBufferWindowMemory(k=3,return_messages=True)
